@@ -23,8 +23,8 @@ static const uint8_t SCK = 18;
 
 //#define SERIAL_RX 2
 //#define SERIAL_TX 1
-//#define BAD_RX SERIAL_RX
-//#define BAD_TX SERIAL_TX
+#define BAD_RX SERIAL_RX
+#define BAD_TX SERIAL_TX
 //#define GPS_SERIAL_TX SERIAL_TX
 //#define GPS_SERIAL_RX SERIAL_RX
 //#define USB_as_HID 1
