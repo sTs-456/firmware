@@ -16,6 +16,11 @@ static const uint8_t MOSI = 17;
 static const uint8_t MISO = -1;
 static const uint8_t SCK = 18;
 
+#define SPI_SCK_PIN  SCK
+#define SPI_MOSI_PIN MOSI
+#define SPI_MISO_PIN MISO
+#define SPI_SS_PIN   SS
+
 //#define SERIAL_RX 2
 //#define SERIAL_TX 1
 //#define BAD_RX SERIAL_RX
