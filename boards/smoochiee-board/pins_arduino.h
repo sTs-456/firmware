@@ -11,9 +11,9 @@ static const uint8_t SDA = 47;
 static const uint8_t SCL = 48;
 
 // Modified elsewhere
-static const uint8_t SS = 3;
+static const uint8_t SS = -1;
 static const uint8_t MOSI = 17;
-static const uint8_t MISO = 8;
+static const uint8_t MISO = -1;
 static const uint8_t SCK = 18;
 
 //#define SERIAL_RX 2
