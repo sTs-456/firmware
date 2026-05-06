@@ -11,9 +11,9 @@ static const uint8_t SDA = 47;
 static const uint8_t SCL = 48;
 
 // Modified elsewhere
-static const uint8_t SS = -1;
+static const uint8_t SS = 3;
 static const uint8_t MOSI = 17;
-static const uint8_t MISO = -1;
+static const uint8_t MISO = 8;
 static const uint8_t SCK = 18;
 
 #define SPI_SCK_PIN  SCK
@@ -21,10 +21,15 @@ static const uint8_t SCK = 18;
 #define SPI_MISO_PIN MISO
 #define SPI_SS_PIN   SS
 
-//#define SERIAL_RX 2
-//#define SERIAL_TX 1
+#define SERIAL_RX 2
+#define SERIAL_TX 1
 #define BAD_RX SERIAL_RX
 #define BAD_TX SERIAL_TX
+
+//#define SERIAL_RX 2
+//#define SERIAL_TX 1
+//#define BAD_RX SERIAL_RX
+//#define BAD_TX SERIAL_TX
 //#define GPS_SERIAL_TX SERIAL_TX
 //#define GPS_SERIAL_RX SERIAL_RX
 //#define USB_as_HID 1
