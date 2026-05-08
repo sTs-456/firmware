@@ -48,20 +48,20 @@ static const uint8_t SCK = 18;
 //#define LED_ON HIGH
 //#define LED_OFF LOW
 
-//#define USE_CC1101_VIA_SPI
-//#define CC1101_GDO0_PIN 9
-//#define CC1101_GDO2_PIN 10
-//#define CC1101_SS_PIN 46
-//#define CC1101_MOSI_PIN SPI_MOSI_PIN
-//#define CC1101_SCK_PIN SPI_SCK_PIN
-//#define CC1101_MISO_PIN SPI_MISO_PIN
+#define USE_CC1101_VIA_SPI
+#define CC1101_GDO0_PIN 9
+#define CC1101_GDO2_PIN 10
+#define CC1101_SS_PIN 13
+#define CC1101_MOSI_PIN 4
+#define CC1101_SCK_PIN 5
+#define CC1101_MISO_PIN 6
 
-//#define USE_NRF24_VIA_SPI
-//#define NRF24_CE_PIN 21
-//#define NRF24_SS_PIN 14
-//#define NRF24_MOSI_PIN SPI_MOSI_PIN
-//#define NRF24_SCK_PIN SPI_SCK_PIN
-//#define NRF24_MISO_PIN SPI_MISO_PIN
+#define USE_NRF24_VIA_SPI
+#define NRF24_CE_PIN 21
+#define NRF24_SS_PIN 42
+#define NRF24_MOSI_PIN 4
+#define NRF24_SCK_PIN 5
+#define NRF24_MISO_PIN 6
 
 //#define FP 1
 //#define FM 2
@@ -84,16 +84,17 @@ static const uint8_t SCK = 18;
 #define TFT_MOSI 17
 #define TFT_SCLK 18
 #define TFT_CS -1
+#define TFT_SPI_HOST 3
 #define TOUCH_CS -1 // SDCARD_CS to make sure SDCard works
 #define SMOOTH_FONT 1
 #define SPI_FREQUENCY 20000000
 #define SPI_READ_FREQUENCY 20000000
 #define SPI_TOUCH_FREQUENCY 2500000
 
-//#define SDCARD_CS 3
-//#define SDCARD_SCK 18
-//#define SDCARD_MISO 8
-//#define SDCARD_MOSI 17
+#define SDCARD_CS 7
+#define SDCARD_SCK 5
+#define SDCARD_MISO 6
+#define SDCARD_MOSI 4
 
 //#define GROVE_SDA 47
 //#define GROVE_SCL 48
