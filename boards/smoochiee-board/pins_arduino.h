@@ -48,20 +48,20 @@ static const uint8_t SCK = 18;
 //#define LED_ON HIGH
 //#define LED_OFF LOW
 
-#define USE_CC1101_VIA_SPI
-#define CC1101_GDO0_PIN 9
-#define CC1101_GDO2_PIN 10
-#define CC1101_SS_PIN 13
-#define CC1101_MOSI_PIN 4
-#define CC1101_SCK_PIN 5
-#define CC1101_MISO_PIN 6
+//#define USE_CC1101_VIA_SPI
+//#define CC1101_GDO0_PIN 9
+//#define CC1101_GDO2_PIN 10
+//#define CC1101_SS_PIN 13
+//#define CC1101_MOSI_PIN 4
+//#define CC1101_SCK_PIN 5
+//#define CC1101_MISO_PIN 6
 
-#define USE_NRF24_VIA_SPI
-#define NRF24_CE_PIN 21
-#define NRF24_SS_PIN 42
-#define NRF24_MOSI_PIN 4
-#define NRF24_SCK_PIN 5
-#define NRF24_MISO_PIN 6
+//#define USE_NRF24_VIA_SPI
+//#define NRF24_CE_PIN 21
+//#define NRF24_SS_PIN 42
+//#define NRF24_MOSI_PIN 4
+//#define NRF24_SCK_PIN 5
+//#define NRF24_MISO_PIN 6
 
 //#define FP 1
 //#define FM 2
@@ -91,7 +91,7 @@ static const uint8_t SCK = 18;
 #define SPI_READ_FREQUENCY 20000000
 #define SPI_TOUCH_FREQUENCY 2500000
 
-#define SDCARD_CS 3
+#define SDCARD_CS 14
 #define SDCARD_SCK 13
 #define SDCARD_MISO 11
 #define SDCARD_MOSI 12
