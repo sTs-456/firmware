@@ -16,11 +16,11 @@ static const uint8_t MISO = 19;
 static const uint8_t SCK = 18;
 
 // ===== GPIO Aliases (ESP32 classic max GPIO39) =====
-static const uint8_t G0 = 0;  static const uint8_t G1 = 1;
-static const uint8_t G2 = 2;  static const uint8_t G3 = 3;
-static const uint8_t G4 = 4;  static const uint8_t G5 = 5;
-static const uint8_t G6 = 6;  static const uint8_t G7 = 7;
-static const uint8_t G8 = 8;  static const uint8_t G9 = 9;
+static const uint8_t G0 = 0;   static const uint8_t G1 = 1;
+static const uint8_t G2 = 2;   static const uint8_t G3 = 3;
+static const uint8_t G4 = 4;   static const uint8_t G5 = 5;
+static const uint8_t G6 = 6;   static const uint8_t G7 = 7;
+static const uint8_t G8 = 8;   static const uint8_t G9 = 9;
 static const uint8_t G10 = 10; static const uint8_t G11 = 11;
 static const uint8_t G12 = 12; static const uint8_t G13 = 13;
 static const uint8_t G14 = 14; static const uint8_t G15 = 15;
@@ -59,7 +59,7 @@ static const uint8_t G36 = 36; static const uint8_t G39 = 39;
 #define CC1101_MOSI_PIN 23
 #define CC1101_SCK_PIN  18
 #define CC1101_MISO_PIN 19
-#define CC1101_GDO2_PIN -1    // Optional, bisa pakai GPIO 0 kalau perlu
+#define CC1101_GDO2_PIN -1
 
 // ===== NRF24L01 (Shared SPI) =====
 #define NRF24_CE_PIN    2
