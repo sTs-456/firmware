@@ -108,4 +108,10 @@ static const uint8_t G36 = 36; static const uint8_t G39 = 39;
 #define SPI_MOSI_PIN 23
 #define SPI_SS_PIN   5
 
+// ===== Font Size untuk ST7735 128x160 =====
+#define FM 1        // Font Medium: 1=kecil, 2=default, 3=besar
+#define FP 1        // Font Small: 1=paling kecil
+#define LW 6        // Letter Width multiplier (opsional)
+#define LH 8        // Letter Height multiplier (opsional)
+
 #endif
