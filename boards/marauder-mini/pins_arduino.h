@@ -76,6 +76,14 @@ static const uint8_t G36 = 36; static const uint8_t G39 = 39;
 #define RFID_SCK_PIN    18
 #define RFID_MISO_PIN   19
 
+// ===== BadUSB CH9329 (Optional - Disable if not used) =====
+#define BAD_TX -1    // ⚠️ Set -1 kalau nggak pakai modul CH9329
+#define BAD_RX -1    // ⚠️ Set -1 kalau nggak pakai modul CH9329
+
+// ===== GPS Serial (UART1) =====
+#define GPS_SERIAL_TX 22
+#define GPS_SERIAL_RX 21
+
 // ===== Buttons (5-Way Navigation) =====
 #define HAS_BTN 1
 #define HAS_5_BUTTONS           // ✅ Wajib untuk interface.cpp
