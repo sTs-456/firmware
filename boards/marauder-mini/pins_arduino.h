@@ -76,12 +76,17 @@ static const uint8_t G36 = 36; static const uint8_t G39 = 39;
 #define RFID_SCK_PIN    18
 #define RFID_MISO_PIN   19
 
-// ===== Buttons =====
+// ===== Buttons (5-Way Navigation) =====
 #define HAS_BTN 1
-#define SEL_BTN 34
-#define UP_BTN 36
-#define DW_BTN 35
-#define BTN_ACT LOW
+#define HAS_5_BUTTONS           // ✅ Wajib untuk interface.cpp
+#define BTN_ALIAS "\"Ok\""
+
+#define SEL_BTN 34              // ✅ Input-only pin
+#define UP_BTN 36               // ✅ Input-only pin
+#define DW_BTN 35               // ✅ Input-only pin
+#define R_BTN 39                // ✅ Input-only pin (GPIO39 input-only di ESP32)
+#define L_BTN 25                // ✅ Ganti dari 13 ke 25 (bebas konflik)
+#define BTN_ACT LOW             // Active-low (button ke GND saat ditekan)
 
 // ===== I2C / Serial / GPS =====
 #define GROVE_SDA 33
