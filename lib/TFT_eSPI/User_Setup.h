@@ -28,7 +28,7 @@
 // Minimal configuration option, define additional parameters below for this
 // display #define R61581_DRIVER #define RM68140_DRIVER
 
-#define TFT_DRIVER 0x7735
+// #define TFT_DRIVER 0x7735
 // Some displays support SPI reads via the MISO pin, other displays have a
 // single bi-directional SDA pin and the library will try to read this via the
 // MOSI line. To use the SDA line for reading data from the TFT uncomment the
@@ -277,8 +277,8 @@
 // #define SPI_FREQUENCY   1000000
 // #define SPI_FREQUENCY   5000000
 // #define SPI_FREQUENCY  10000000
-// #define SPI_FREQUENCY  20000000
-#define SPI_FREQUENCY 27000000  // Actually sets it to 26.67MHz = 80/3
+#define SPI_FREQUENCY  20000000
+// #define SPI_FREQUENCY 27000000  // Actually sets it to 26.67MHz = 80/3
 // #define SPI_FREQUENCY  40000000 // Maximum to use SPIFFS
 // #define SPI_FREQUENCY  80000000
 
@@ -291,7 +291,7 @@
 // The ESP32 has 2 free SPI ports i.e. VSPI and HSPI, the VSPI is the default.
 // If the VSPI port is in use and pins are not accessible (e.g. TTGO T-Beam)
 // then uncomment the following line:
-//#define USE_HSPI_PORT
+#define USE_HSPI_PORT
 
 // Comment out the following #define if "SPI Transactions" do not need to be
 // supported. When commented out the code size will be smaller and sketches will
