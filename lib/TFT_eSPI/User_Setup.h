@@ -14,16 +14,16 @@
 // Section 1. Call up the right driver file and any options for it
 //
 // ##################################################################################
-#include "TFT_Drivers/ST7735_Defines.h"
+//#include "TFT_Drivers/ST7735_Defines.h"
 // Only define one driver, the other ones must be commented out
 //#define ILI9341_DRIVER
-#define ST7735_DRIVER  // Define additional parameters below for this display
+//#define ST7735_DRIVER  // Define additional parameters below for this display
 //#define ILI9163_DRIVER     // Define additional parameters below for this
 // display #define S6D02A1_DRIVER #define RPI_ILI9486_DRIVER // 20MHz maximum
 // SPI #define HX8357D_DRIVER #define ILI9481_DRIVER #define ILI9486_DRIVER
 //#define ILI9488_DRIVER     // WARNING: Do not connect ILI9488 display SDO to
-// MISO if other devices share the SPI bus (TFT SDO does NOT tristate when CS is
-// high) #define ST7789_DRIVER      // Full configuration option, define
+// MISO if other devices share the SPI bus (TFT SDO does NOT tristate when CS is high)
+#define ST7789_DRIVER      // Full configuration option, define
 // additional parameters below for this display #define ST7789_2_DRIVER    //
 // Minimal configuration option, define additional parameters below for this
 // display #define R61581_DRIVER #define RM68140_DRIVER
@@ -51,12 +51,12 @@
 
 // For ST7789, ST7735 and ILI9163 ONLY, define the pixel width and height in
 // portrait orientation
-#define TFT_WIDTH 80
+// #define TFT_WIDTH 80
 // #define TFT_WIDTH  128
 // #define TFT_WIDTH  240 // ST7789 240 x 240 and 240 x 320
-#define TFT_HEIGHT 160
+// #define TFT_HEIGHT 160
 // #define TFT_HEIGHT 128
-// #define TFT_HEIGHT 240 // ST7789 240 x 240
+#define TFT_HEIGHT 240 // ST7789 240 x 240
 // #define TFT_HEIGHT 320 // ST7789 240 x 320
 
 // For ST7735 ONLY, define the type of display, originally this was based on the
@@ -193,11 +193,11 @@
 //#define TFT_RST  33  // Reset pin (could connect to Arduino RESET pin)
 //#define TFT_BL   32  // LED back-light (required for M5Stack)
 
-#define TFT_MOSI 15
-#define TFT_SCLK 13
-#define TFT_CS   5   // Chip select line for TFT display on Shield
-#define TFT_DC   23  // Data/command line for TFT on Shield
-#define TFT_RST  18  // Reset line for TFT is handled by seesaw!
+#define TFT_MOSI 17
+#define TFT_SCLK 18
+#define TFT_CS   -1   // Chip select line for TFT display on Shield
+#define TFT_DC   15  // Data/command line for TFT on Shield
+#define TFT_RST  16  // Reset line for TFT is handled by seesaw!
 #define TOUCH_CS -1 
 
 // ######       EDIT THE PINs BELOW TO SUIT YOUR ESP32 PARALLEL TFT SETUP ######
