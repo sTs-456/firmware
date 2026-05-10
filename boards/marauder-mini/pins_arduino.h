@@ -81,8 +81,8 @@ static const uint8_t G36 = 36; static const uint8_t G39 = 39;
 #define BAD_RX -1    // ⚠️ Set -1 kalau nggak pakai modul CH9329
 
 // ===== GPS Serial (UART1) =====
-#define GPS_SERIAL_TX 22
-#define GPS_SERIAL_RX 21
+//#define GPS_SERIAL_TX 22
+//#define GPS_SERIAL_RX 21
 
 // ===== Buttons (5-Way Navigation) =====
 
@@ -90,11 +90,14 @@ static const uint8_t G36 = 36; static const uint8_t G39 = 39;
 #define HAS_5_BUTTONS
 #define BTN_ALIAS "\"Ok\""
 
-#define SEL_BTN 32
-#define UP_BTN 33
+// Semua pin stabil + ada internal pullup
+#define SEL_BTN 21
+#define UP_BTN 22
 #define DW_BTN 25
 #define R_BTN 26
-#define L_BTN 27
+#define L_BTN 33
+
+#define BTN_ACT LOW
 
 #define BTN_ACT LOW             // Active-low (button ke GND saat ditekan)
 
