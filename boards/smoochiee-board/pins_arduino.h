@@ -36,9 +36,9 @@ static const uint8_t SCK = 18;
 
 #define BTN_ALIAS "\"OK\""
 #define HAS_5_BUTTONS
-#define SEL_BTN 35
-#define UP_BTN 36
-#define DW_BTN 37
+#define SEL_BTN 21
+#define UP_BTN 47
+#define DW_BTN 48
 #define R_BTN 38
 #define L_BTN 39
 #define BTN_ACT LOW
