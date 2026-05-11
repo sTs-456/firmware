@@ -91,7 +91,7 @@ static const uint8_t SCK = 18;
 #define SPI_READ_FREQUENCY 20000000
 #define SPI_TOUCH_FREQUENCY 2500000
 
-#define SDCARD_CS   41
+#define SDCARD_CS   42
 #define SDCARD_SCK  18
 #define SDCARD_MISO 8
 #define SDCARD_MOSI 17
