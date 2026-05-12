@@ -10,7 +10,7 @@
 XPowersPPM PPM;
 #endif
 
-// Global SPI instance untuk modul (HSPI/SPI3)
+// SPI instance untuk modul (HSPI/SPI3)
 SPIClass moduleSPI(SPI3_HOST);
 
 void _setup_gpio() {
@@ -21,7 +21,7 @@ void _setup_gpio() {
     if (IS_VALID_PIN(L_BTN))   pinMode(L_BTN, INPUT_PULLUP);
     if (IS_VALID_PIN(R_BTN))   pinMode(R_BTN, INPUT_PULLUP);
 
-    // 2️⃣ TFT BACKLIGHT (FIX CRASH "IO 5 is not set as GPIO")
+    // 2️⃣ TFT BACKLIGHT (Fix: IO 5 not set as GPIO)
     if (IS_VALID_PIN(TFT_BL)) {
         pinMode(TFT_BL, OUTPUT);
         analogWrite(TFT_BL, MINBRIGHT);
@@ -56,7 +56,7 @@ void _setup_gpio() {
     if (IS_VALID_PIN(GROVE_SDA) && IS_VALID_PIN(GROVE_SCL)) {
         Wire.setPins(GROVE_SDA, GROVE_SCL);
         Wire.begin(GROVE_SDA, GROVE_SCL);
-        Wire.setClock(100000); // 100kHz lebih stabil untuk PMU
+        Wire.setClock(100000);
 
         #ifdef XPOWERS_CHIP_BQ25896
         bool pmu_ret = PPM.init(Wire, GROVE_SDA, GROVE_SCL, BQ25896_SLAVE_ADDRESS);
@@ -70,7 +70,7 @@ void _setup_gpio() {
             PPM.enableCharge();
             Serial.println("[PMU] BQ25896 initialized OK");
         } else {
-            Serial.println("[PMU] BQ25896 FAILED - cek I2C wiring & pull-up resistor!");
+            Serial.println("[PMU] BQ25896 FAILED - cek I2C wiring & pull-up!");
         }
         #endif
     }
