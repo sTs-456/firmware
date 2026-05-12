@@ -13,33 +13,45 @@ static const uint8_t RX = 2;
 #define SERIAL_TX 1
 #define BAD_RX SERIAL_RX
 #define BAD_TX SERIAL_TX
-#define GPS_SERIAL_TX SERIAL_TX
-#define GPS_SERIAL_RX SERIAL_RX
 
 // ============================================================================
-// 📌 I2C (DIPINDAH dari 47/48 karena bentrok dengan USB-CDC)
+// 📌 I2C (Safe pins,避开 USB-CDC D+/D-)
 // ============================================================================
+#ifndef GROVE_SDA
 #define GROVE_SDA 19
+#endif
+#ifndef GROVE_SCL
 #define GROVE_SCL 20
-static const uint8_t SDA = 19;
-static const uint8_t SCL = 20;
+#endif
+static const uint8_t SDA = GROVE_SDA;
+static const uint8_t SCL = GROVE_SCL;
 
 // ============================================================================
-// 📌 DUAL SPI CONFIGURATION (CRITICAL FOR NO-CS TFT)
+// 📌 DEFAULT SPI PINS (WAJIB ADA BIAR SPI.cpp ESP32 CORE COMPILE)
+// Dipetakan ke HSPI (Bus Modules/SD/RF)
 // ============================================================================
-// VSPI (SPI2) -> DEDICATED FOR ST7789 240x240 (NO CS PIN)
-#define TFT_SPI_HOST   SPI2_HOST
-#define TFT_SCLK       13
-#define TFT_MOSI       11
-#define TFT_MISO       -1  // Write-only
-#define TFT_CS         -1  // ✅ NO CS PIN
+static const uint8_t SS   = 3;
+static const uint8_t MOSI = 17;
+static const uint8_t MISO = 8;
+static const uint8_t SCK  = 18;
 
-// HSPI (SPI3) -> SHARED FOR CC1101, NRF24, SD CARD
+// ============================================================================
+// 📌 MODULES SPI (HSPI/SPI3) - Shared Bus
+// ============================================================================
 #define MODULE_SPI_HOST SPI3_HOST
-#define SPI_SCK_PIN    18
-#define SPI_MOSI_PIN   17
-#define SPI_MISO_PIN   8
-#define SPI_SS_PIN     3
+#define SPI_SCK_PIN     SCK
+#define SPI_MOSI_PIN    MOSI
+#define SPI_MISO_PIN    MISO
+#define SPI_SS_PIN      SS
+
+// ============================================================================
+// 📌 TFT SPI (VSPI/SPI2) - Dedicated for ST7789 240x240 (NO CS)
+// ============================================================================
+#define TFT_SPI_HOST    SPI2_HOST
+#define TFT_SCLK        13
+#define TFT_MOSI        11
+#define TFT_MISO        -1
+#define TFT_CS          -1
 
 // ============================================================================
 // 📌 BUTTONS
@@ -66,8 +78,8 @@ static const uint8_t SCL = 20;
 // ============================================================================
 #define USE_CC1101_VIA_SPI
 #define CC1101_GDO0_PIN  9
-#define CC1101_GDO2_PIN  -1 // Non-aktifkan biar gak bentrok Mic
-#define CC1101_SS_PIN    46  // ✅ CS Unik di HSPI
+#define CC1101_GDO2_PIN  -1
+#define CC1101_SS_PIN    46
 #define CC1101_MOSI_PIN  SPI_MOSI_PIN
 #define CC1101_SCK_PIN   SPI_SCK_PIN
 #define CC1101_MISO_PIN  SPI_MISO_PIN
@@ -77,7 +89,7 @@ static const uint8_t SCL = 20;
 // ============================================================================
 #define USE_NRF24_VIA_SPI
 #define NRF24_CE_PIN     14
-#define NRF24_SS_PIN     42  // ✅ CS Unik di HSPI
+#define NRF24_SS_PIN     42
 #define NRF24_MOSI_PIN   SPI_MOSI_PIN
 #define NRF24_SCK_PIN    SPI_SCK_PIN
 #define NRF24_MISO_PIN   SPI_MISO_PIN
@@ -85,9 +97,13 @@ static const uint8_t SCL = 20;
 // ============================================================================
 // 📌 DISPLAY (ST7789 240x240 - NO CS)
 // ============================================================================
+#ifndef HAS_SCREEN
 #define HAS_SCREEN 1
+#endif
 #define ROTATION 0
+#ifndef MINBRIGHT
 #define MINBRIGHT (uint8_t)30
+#endif
 #define USER_SETUP_LOADED 1
 #define ST7789_DRIVER 1
 #define TFT_RGB_ORDER 0
@@ -97,10 +113,7 @@ static const uint8_t SCL = 20;
 #define TFT_BL       5
 #define TFT_RST      16
 #define TFT_DC       15
-#define TFT_MISO     -1
-#define TFT_MOSI     TFT_MOSI
-#define TFT_SCLK     TFT_SCLK
-#define TFT_CS       -1
+// TFT_MOSI & TFT_SCLK sudah didefinisikan di block VSPI di atas
 #define TOUCH_CS     -1
 #define SMOOTH_FONT  1
 #define SPI_FREQUENCY 20000000
@@ -119,9 +132,11 @@ static const uint8_t SCL = 20;
 // ============================================================================
 #define XPOWERS_CHIP_BQ25896
 #define USE_BOOST
+#ifndef MIC_INMP441
 #define MIC_INMP441
+#endif
 #define PIN_CLK  1
-#define PIN_DATA 12  // Ganti ke 12 biar gak bentrok CC1101_GDO0
+#define PIN_DATA 12
 #define PIN_WS   2
 
 // ============================================================================
